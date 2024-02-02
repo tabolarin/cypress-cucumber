@@ -69,7 +69,7 @@ Then(/^The customer information will be displayed$/, (dataTable) => {
 Then(/^I click on the delete button for customer$/, () => {
     cy.xpath('//td[@class="ng-binding" and text()="Albus"]/..//button[@ng-click="deleteCust(cust)"]').click()
 });
-Then(/^The customer information will not be displayed$/, function () {
+Then(/^The customer information will not be displayed$/, ()  => {
     cy.then(function () {
         cy.xpath('//td[@class="ng-binding" and text()=\'' + this.aliasFirstName + '\']').should('be.visible')
         cy.xpath('//td[@class="ng-binding" and text()=\'' + this.aliasLastName + '\']').should('be.visible')
