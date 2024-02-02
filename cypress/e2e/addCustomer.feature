@@ -15,7 +15,7 @@ Feature: Add a bank customer
     Then Then customer information will be listed
 
 
-  Scenario Outline: Add multiple bank customers
+  Scenario Outline: Open customer account
     Given I navigate to the login page
     When I click on bank manager login
     And I click on add customer
@@ -30,11 +30,27 @@ Feature: Add a bank customer
     And I select currency <currency>
     And I click the process button
     Then The alert popup will be displayed
+
     Examples:
-      | firstName | lastName | customerName     | postcode | currency |
-      | Danielle  | Steel   | "Danielle Steel" | NW4 5RT  | "Pound"  |
+      | firstName | lastName  | customerName    | postcode  | currency |
+      | Danielle  | Steel     | Danielle Steel  | NW4 5RT   | Pound    |
+      | Jojo      | Moyes     | Jojo Moyes      | BNA11 7SE | Dollar   |
+      | James     | Patterson | James Patterson | N11 3ER   | Rupee    |
 
 
+  Scenario Outline: Delete customer account
+    Given I navigate to the login page
+    When I click on bank manager login
+    And I select the customers tab
+    Then The customer information will be displayed
+      | Key       | Value       |
+      | FirstName | <firstName> |
+      | LastName  | <lastName>  |
+    And I click on the delete button for customer
+    Then The customer information will not be displayed
 
-
- #scenario outline tests - open multiple accounts
+    Examples:
+      | firstName | lastName   |
+      | Hermoine  | Granger    |
+      | Ron       | Weasly     |
+      | Neville   | Longbottom |
