@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "moduleResolution": "Node16",
+    "target": "es5",
+    "lib": ["es5", "dom","es2021"],
+    "types": ["cypress", "node"]
+  },
+  "include": ["**/*.ts"]
+}
