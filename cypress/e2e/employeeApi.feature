@@ -9,7 +9,6 @@ Feature: Get customer information
       | Name | James Brown |
       | Job  | QA Analyst  |
 
-
   Scenario: Get customer information
     Given I access api request end point to get employee information
     Then The response code is 200
