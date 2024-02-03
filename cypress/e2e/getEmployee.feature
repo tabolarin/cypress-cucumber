@@ -13,4 +13,6 @@ Feature: Get customer information
   Scenario: Delete customer information
     Given I access api request end point to delete customer information
     Then The response code is '200'
+  And The status is 'success'
+
 #    add response validation using fixture

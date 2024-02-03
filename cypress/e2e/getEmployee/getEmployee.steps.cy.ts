@@ -14,6 +14,12 @@ Then(/^The response code is '200'$/, () => {
         expect(this.response.status).to.eq(200)
     })
 });
+
+Then(/^The status is 'success'$/, function () {
+    cy.then(function () {
+        expect(this.response.body.status).to.equal('Success')
+    })
+});
 Then(/^The customer information is$/, (dataTable) => {
     // @ts-ignore
     const employeeInfo = dataTable.rowsHash()
